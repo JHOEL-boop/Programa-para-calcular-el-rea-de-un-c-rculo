@@ -1,0 +1,50 @@
+# Programa para calcular el área de un círculo y determinar si el área supera un valor dado
+# Utiliza diferentes tipos de datos (integer, float, string, boolean) y convenciones de identificadores
+
+def calcular_area_circulo(radio):
+    """
+    Calcula el área de un círculo dado su radio.
+
+    Args:
+        radio (float): El radio del círculo.
+
+    Returns:
+        float: El área del círculo.
+    """
+    PI = 3.14159  # Constante para el valor de pi
+    return PI * radio ** 2
+
+def area_supera_limite(area, limite):
+    """
+    Verifica si el área calculada supera un límite dado.
+
+    Args:
+        area (float): El área calculada.
+        limite (float): El valor límite.
+
+    Returns:
+        bool: True si el área supera el límite, False en caso contrario.
+    """
+    return area > limite
+
+# Entrada del usuario
+print("Calculadora de área de un círculo")
+radio_str = input("Introduce el radio del círculo (en unidades): ")
+limite_str = input("Introduce el valor límite para comparar el área: ")
+
+# Conversión de entradas a los tipos de datos adecuados
+radio = float(radio_str)
+limite = float(limite_str)
+
+# Cálculo del área
+area = calcular_area_circulo(radio)
+
+# Verificación de si el área supera el límite
+supera = area_supera_limite(area, limite)
+
+# Salida de resultados
+print(f"El área del círculo con radio {radio} es: {area:.2f}")
+if supera:
+    print(f"El área del círculo supera el límite de {limite}.")
+else:
+    print(f"El área del círculo no supera el límite de {limite}.")
